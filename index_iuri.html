@@ -268,7 +268,7 @@ html,body{opacity:1!important;visibility:visible!important}
     color: #0A0A0A !important;
 }
 .elementor-sticky--active #iuri-header-logo span:last-child {
-    color: #C19A5B !important;
+    color: #4F0608 !important;
 }
 
 /* Hero Background Image Override */
@@ -278,6 +278,66 @@ html,body{opacity:1!important;visibility:visible!important}
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+}
+
+/* --- PREMIUM RED DESIGN SYSTEM OVERRIDES (#4F0608) --- */
+
+/* 1. Global buttons background, typography, and text color */
+.elementor-14 .elementor-button,
+.elementor-30 .elementor-button,
+.elementor-80 .elementor-button,
+.elementor-button {
+    background-image: linear-gradient(90deg, #851014 0%, #4F0608 100%) !important;
+    background-color: #4F0608 !important;
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    transition: all 0.3s ease-in-out !important;
+}
+.elementor-14 .elementor-button:hover,
+.elementor-button:hover,
+.elementor-button:focus {
+    background-image: linear-gradient(90deg, #991216 0%, #5E090C 100%) !important;
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(79, 6, 8, 0.4) !important;
+}
+
+/* Outline button hover */
+.elementor-button[href="#solucoes"]:hover {
+    background-color: rgba(79, 6, 8, 0.2) !important;
+    color: #FF5C61 !important;
+    border-color: #FF5C61 !important;
+}
+
+/* 2. Global icons color */
+.elementor-14 .elementor-icon,
+.elementor-icon {
+    color: #FF5C61 !important;
+    fill: #FF5C61 !important;
+    border-color: #851014 !important;
+}
+.elementor-14 .elementor-view-stacked .elementor-icon {
+    background-color: #4F0608 !important;
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* 3. Navigation items active/hover state */
+.elementor-14 .elementor-item:hover,
+.elementor-14 .elementor-item:focus,
+.elementor-14 .elementor-item.elementor-item-active {
+    color: #FF5C61 !important;
+}
+
+/* 4. FAQ Accordion header text active state & icon */
+.e-n-accordion .e-n-accordion-item-title-text {
+    color: #FFFFFF !important;
+}
+.e-n-accordion .e-n-accordion-item[open] .e-n-accordion-item-title-text {
+    color: #FF5C61 !important;
+}
+.e-n-accordion .e-n-accordion-item-title-icon svg {
+    fill: #FF5C61 !important;
 }
 </style>
 </head>
@@ -356,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <a href="#inicio">
 <div id="iuri-header-logo" style="text-decoration:none; display:block; padding:10px 0;">
     <span style="font-family:'Raleway',sans-serif; font-size:24px; font-weight:700; color:#FFFFFF; line-height:1.1; display:block; letter-spacing:1px;">Dr. Iuri Sena</span>
-    <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; color:#FFD482; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px;">Cirurgião Geral</span>
+    <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; color:#FF5C61; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px;">Cirurgião Geral</span>
 </div> </a>
 </div>
 <div class="elementor-element elementor-element-02f5daa elementor-nav-menu--stretch elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-e-type="widget" data-element_type="widget" data-id="02f5daa" data-settings='{"full_width":"stretch","layout":"horizontal","submenu_icon":{"value":"&lt;svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-caret-down\" viewBox=\"0 0 320 512\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"&gt;&lt;path d=\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\"&gt;&lt;\/path&gt;&lt;\/svg&gt;","library":"fa-solid"},"toggle":"burger"}' data-widget_type="nav-menu.default">
@@ -385,8 +445,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="elementor-element elementor-element-430ec2ed e-flex e-con-boxed e-con e-child" data-e-type="container" data-element_type="container" data-id="430ec2ed" data-settings='{"background_background":"classic"}'>
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-7354e9f8 elementor-widget__width-initial animated-title-hero elementor-widget elementor-widget-heading active" data-e-type="widget" data-element_type="widget" data-id="7354e9f8" data-widget_type="heading.default">
-<h2 class="elementor-heading-title elementor-size-default"><div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,212,130,0.1); border:1px solid #FFD482; padding:6px 16px; border-radius:30px; margin-bottom:20px; font-family:'Montserrat',sans-serif; font-size:11px; color:#FFD482; font-weight:600; text-transform:uppercase; letter-spacing:1px;">
-    <svg style="width:14px; height:14px; fill:#FFD482; vertical-align:middle; margin-right:4px;" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+<h2 class="elementor-heading-title elementor-size-default"><div style="display:inline-flex; align-items:center; gap:8px; background:rgba(79,6,8,0.25); border:1px solid #851014; padding:6px 16px; border-radius:30px; margin-bottom:20px; font-family:'Montserrat',sans-serif; font-size:11px; color:#FF5C61; font-weight:600; text-transform:uppercase; letter-spacing:1px;">
+    <svg style="width:14px; height:14px; fill:#FF5C61; vertical-align:middle; margin-right:4px;" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
         <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
     </svg>Referência em Cirurgia Geral no Amapá
 </div>
@@ -418,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <div class="elementor-icon-box-content">
 <p class="elementor-icon-box-description">
-						<strong style="color:#FFC455; display:block; margin-bottom:5px;">Cirurgião Geral e do Trauma</strong>Especialista Registrado (RQE 1382). Experiência comprovada em procedimentos complexos e de emergência.
+						<strong style="color:#FF5C61; display:block; margin-bottom:5px;">Cirurgião Geral e do Trauma</strong>Especialista Registrado (RQE 1382). Experiência comprovada em procedimentos complexos e de emergência.
 					</p>
 </div>
 </div>
@@ -431,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <div class="elementor-icon-box-content">
 <p class="elementor-icon-box-description">
-						<strong style="color:#FFC455; display:block; margin-bottom:5px;">Perito Médico Legista</strong>Precisão e atenção meticulosa aos detalhes, qualidades essenciais para a sua segurança cirúrgica.					</p>
+						<strong style="color:#FF5C61; display:block; margin-bottom:5px;">Perito Médico Legista</strong>Precisão e atenção meticulosa aos detalhes, qualidades essenciais para a sua segurança cirúrgica.					</p>
 </div>
 </div>
 </div>
@@ -443,7 +503,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <div class="elementor-icon-box-content">
 <p class="elementor-icon-box-description">
-						<strong style="color:#FFC455; display:block; margin-bottom:5px;">Mestre pela UNIFAP</strong>Conhecimento acadêmico atualizado, trazendo as melhores práticas e inovações para o Amapá.					</p>
+						<strong style="color:#FF5C61; display:block; margin-bottom:5px;">Mestre pela UNIFAP</strong>Conhecimento acadêmico atualizado, trazendo as melhores práticas e inovações para o Amapá.					</p>
 </div>
 </div>
 </div>
@@ -612,19 +672,19 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="elementor-element elementor-element-44e2ff5 elementor-widget__width-inherit elementor-widget elementor-widget-shortcode" data-e-type="widget" data-element_type="widget" data-id="44e2ff5" data-widget_type="shortcode.default">
 <div class="elementor-widget-container">
 <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:30px;">
-    <div style="flex:1; min-width:280px; max-width:450px; background:#121212; border:1px solid rgba(255,212,130,0.15); border-radius:16px; padding:30px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-        <div style="color:#FFD482; font-size:18px; margin-bottom:15px;">★★★★★</div>
+    <div style="flex:1; min-width:280px; max-width:450px; background:#121212; border:1px solid rgba(133,16,20,0.25); border-radius:16px; padding:30px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        <div style="color:#FF5C61; font-size:18px; margin-bottom:15px;">★★★★★</div>
         <p style="font-family:'Montserrat',sans-serif; font-size:15px; color:#E5E5E5; line-height:1.6; font-style:italic; margin-bottom:15px;">
             "Excelente profissional! Fiz minha cirurgia de vesícula e a recuperação foi incrivelmente rápida. Muito atencioso no pós-operatório."
         </p>
-        <span style="font-family:'Raleway',sans-serif; font-weight:600; color:#FFFFFF; font-size:14px; text-transform:uppercase;">Paciente M.S. <span style="color:#FFD482; font-size:12px; margin-left:5px;">Macapá-AP</span></span>
+        <span style="font-family:'Raleway',sans-serif; font-weight:600; color:#FFFFFF; font-size:14px; text-transform:uppercase;">Paciente M.S. <span style="color:#FF5C61; font-size:12px; margin-left:5px;">Macapá-AP</span></span>
     </div>
-    <div style="flex:1; min-width:280px; max-width:450px; background:#121212; border:1px solid rgba(255,212,130,0.15); border-radius:16px; padding:30px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-        <div style="color:#FFD482; font-size:18px; margin-bottom:15px;">★★★★★</div>
+    <div style="flex:1; min-width:280px; max-width:450px; background:#121212; border:1px solid rgba(133,16,20,0.25); border-radius:16px; padding:30px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        <div style="color:#FF5C61; font-size:18px; margin-bottom:15px;">★★★★★</div>
         <p style="font-family:'Montserrat',sans-serif; font-size:15px; color:#E5E5E5; line-height:1.6; font-style:italic; margin-bottom:15px;">
             "O Dr. Iuri transmite muita segurança. Operei uma hérnia inguinal e hoje levo uma vida normal sem dores. Recomendo a todos."
         </p>
-        <span style="font-family:'Raleway',sans-serif; font-weight:600; color:#FFFFFF; font-size:14px; text-transform:uppercase;">Paciente J.P. <span style="color:#FFD482; font-size:12px; margin-left:5px;">Macapá-AP</span></span>
+        <span style="font-family:'Raleway',sans-serif; font-weight:600; color:#FFFFFF; font-size:14px; text-transform:uppercase;">Paciente J.P. <span style="color:#FF5C61; font-size:12px; margin-left:5px;">Macapá-AP</span></span>
     </div>
 </div>
 </div>
@@ -673,7 +733,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </summary>
 <div aria-labelledby="e-n-accordion-item-1212" class="elementor-element elementor-element-5847d0cb e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="5847d0cb" role="region">
 <div class="elementor-element elementor-element-5111bb96 elementor-widget elementor-widget-text-editor" data-e-type="widget" data-element_type="widget" data-id="5111bb96" data-widget_type="text-editor.default">
-<p><span style="font-weight: 400;">As cirurgias são realizadas em ambiente hospitalar seguro, prioritariamente no Hospital São Camilo e São Luís, com toda a infraestrutura necessária.</span></p> </div>
+<p><span style="font-weight: 400;">Nossos atendimentos são focados em consultas particulares, garantindo o tempo e a dedicação necessários para um planejamento cirúrgico de excelência.</span></p> </div>
 </div>
 </details>
 </div>
@@ -729,9 +789,9 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="elementor-element elementor-element-522d2b0f e-flex e-con-boxed e-con e-parent e-lazyloaded" data-e-type="container" data-element_type="container" data-id="522d2b0f" data-settings='{"background_background":"gradient"}'>
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-7420aaef animated-title elementor-widget elementor-widget-google_maps" data-e-type="widget" data-element_type="widget" data-id="7420aaef" data-widget_type="google_maps.default">
-<div class="elementor-custom-embed" style="display:flex; flex-direction:column; align-items:center; gap:15px; padding:30px; background:#121212; border:1px solid rgba(255,212,130,0.15); border-radius:16px;">
-    <span style="font-family:'Raleway',sans-serif; font-size:13px; font-weight:600; color:#FFD482; letter-spacing:1px; text-transform:uppercase;">Agendamento Rápido via QR Code</span>
-    <img src="assets/images/qrcode_whatsapp.png" alt="WhatsApp QR Code" style="width:200px; height:200px; border-radius:10px; border:2px solid #FFD482; background:#FFFFFF; padding:10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);"/>
+<div class="elementor-custom-embed" style="display:flex; flex-direction:column; align-items:center; gap:15px; padding:30px; background:#121212; border:1px solid rgba(133,16,20,0.25); border-radius:16px;">
+    <span style="font-family:'Raleway',sans-serif; font-size:13px; font-weight:600; color:#FF5C61; letter-spacing:1px; text-transform:uppercase;">Agendamento Rápido via QR Code</span>
+    <img src="assets/images/qrcode_whatsapp.png" alt="WhatsApp QR Code" style="width:200px; height:200px; border-radius:10px; border:2px solid #851014; background:#FFFFFF; padding:10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);"/>
     <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:#A0A0A0; margin:0; text-align:center;">Aponte a câmera do seu celular para falar diretamente com a recepção.</p>
 </div>
 </div>
@@ -740,7 +800,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="elementor-widget-container">
 <div style="text-decoration:none; display:block; padding:10px 0;">
     <span style="font-family:'Raleway',sans-serif; font-size:24px; font-weight:700; color:#FFFFFF; display:block; letter-spacing:1px;">Dr. Iuri Sena</span>
-    <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; color:#FFD482; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px;">Cirurgião Geral</span>
+    <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; color:#FF5C61; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px;">Cirurgião Geral</span>
 </div>
 </div>
 </div>
