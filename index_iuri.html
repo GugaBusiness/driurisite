@@ -822,6 +822,56 @@
         width: 100% !important;
       }
     }
+
+    /* ===== Floating "Agendar agora" label & WhatsApp button ===== */
+    /* Button hidden by default, shown via .wa-btn-visible */
+    .elementor-element-a617769 {
+      opacity: 0 !important;
+      transform: translateY(12px) !important;
+      transition: opacity 0.35s ease, transform 0.35s ease !important;
+      pointer-events: none !important;
+    }
+    .elementor-element-a617769.wa-btn-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      pointer-events: auto !important;
+    }
+    /* Label: independent fixed pill to the left of the WA button */
+    #wa-agendar-label {
+      position: fixed;
+      bottom: 20px;
+      right: 80px;
+      background: linear-gradient(90deg, #851014 0%, #4F0608 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      padding: 10px 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 18px rgba(79,6,8,0.45);
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 9998;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+    #wa-agendar-label.visible {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    @media (max-width: 767px) {
+      #wa-agendar-label {
+        bottom: 14px;
+        right: 70px;
+        font-size: 12px;
+        padding: 8px 14px;
+      }
+    }
   </style>
 </head>
 
@@ -1929,13 +1979,20 @@
               href="https://ssdigitalharvest.com" target="_blank"
               style="color: inherit; text-decoration: underline; font-weight: 500;">SS DIGITAL HARVEST</a></p>
         </div>
+        <!-- "Agendar agora" label — independent fixed element, shown via JS -->
+        <a id="wa-agendar-label"
+          href="https://wa.me/5596991565517?text=Ol%C3%A1%20Dr.%20Iuri,%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20cir%C3%BArgica."
+          target="_blank" rel="noopener noreferrer">
+          Agendar agora
+        </a>
+        <!-- Original Elementor floating WhatsApp button restored untouched -->
         <div
           class="elementor-element elementor-element-a617769 elementor-view-stacked elementor-fixed elementor-shape-circle elementor-widget elementor-widget-icon"
           data-e-type="widget" data-element_type="widget" data-id="a617769" data-settings='{"_position":"fixed"}'
           data-widget_type="icon.default">
           <div class="elementor-icon-wrapper">
             <a class="elementor-icon"
-              href="https://wa.me/5596991565517?text=Olá%20Dr.%20Iuri,%20gostaria%20de%20agendar%20uma%20avaliação%20cirúrgica." target="_blank" rel="noopener noreferrer">
+              href="https://wa.me/5596991565517?text=Ol%C3%A1%20Dr.%20Iuri,%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20cir%C3%BArgica." target="_blank" rel="noopener noreferrer">
               <svg aria-hidden="true" class="e-font-icon-svg e-fab-whatsapp" viewbox="0 0 448 512"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -1944,6 +2001,36 @@
               </svg> </a>
           </div>
         </div>
+        <!-- JS: sync label + WA button visibility with hero CTA -->
+        <script>
+          (function () {
+            var label = document.getElementById('wa-agendar-label');
+            var waBtn = document.querySelector('.elementor-element-a617769');
+            var heroCta = document.querySelector('[data-id="604eb669"]');
+            if (!label || !waBtn || !heroCta) return;
+
+            function show() {
+              label.classList.add('visible');
+              waBtn.classList.add('wa-btn-visible');
+            }
+            function hide() {
+              label.classList.remove('visible');
+              waBtn.classList.remove('wa-btn-visible');
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  hide();
+                } else {
+                  show();
+                }
+              });
+            }, { threshold: 0.1 });
+
+            observer.observe(heroCta);
+          })();
+        </script>
 
       </div>
     </div>
