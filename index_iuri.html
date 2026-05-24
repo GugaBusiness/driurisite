@@ -410,6 +410,20 @@ document.addEventListener("DOMContentLoaded", function () {
     animateTitles(); // Garante a ativação de títulos já visíveis
 });
 </script>
+<style>
+@media (max-width: 767px) {
+  .elementor-14 .elementor-element.elementor-element-5b543cd3:not(.elementor-motion-effects-element-type-background),
+  .elementor-14 .elementor-element.elementor-element-5b543cd3 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: none !important;
+  }
+  .elementor-14 .elementor-element.elementor-element-430ec2ed:not(.elementor-motion-effects-element-type-background),
+  .elementor-14 .elementor-element.elementor-element-430ec2ed > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url('assets/images/hero_mobile.png') !important;
+    background-position: top center !important;
+    background-size: cover !important;
+  }
+}
+</style>
 <div class="elementor elementor-14" data-elementor-id="14" data-elementor-post-type="page" data-elementor-type="wp-page">
 <div class="elementor-element elementor-element-11cbc95e e-flex e-con-boxed e-con e-parent e-lazyloaded animated fadeInDown" data-e-type="container" data-element_type="container" data-id="11cbc95e" data-settings='{"background_background":"classic","animation":"fadeInDown"}'>
 <div class="e-con-inner">
