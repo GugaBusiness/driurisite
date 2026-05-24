@@ -261,13 +261,14 @@ html,body{opacity:1!important;visibility:visible!important}
 <meta property="og:image" content="assets/images/dr_iuri_sena.png"/>
 <style>
 /* Dynamic Header Logo Color Change on Scroll Sticky State */
-#iuri-header-logo span {
+#iuri-header-logo .logo-name,
+#iuri-header-logo .logo-subtitle {
     transition: color 0.3s ease;
 }
-.elementor-sticky--active #iuri-header-logo span:first-child {
+.elementor-sticky--active #iuri-header-logo .logo-name {
     color: #0A0A0A !important;
 }
-.elementor-sticky--active #iuri-header-logo span:last-child {
+.elementor-sticky--active #iuri-header-logo .logo-subtitle {
     color: #4F0608 !important;
 }
 
@@ -414,9 +415,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-5835fe7d elementor-widget__width-initial elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="5835fe7d" data-widget_type="image.default">
 <a href="#inicio">
-<div id="iuri-header-logo" style="text-decoration:none; display:block; padding:10px 0;">
-    <span style="font-family:'Raleway',sans-serif; font-size:24px; font-weight:700; color:#FFFFFF; line-height:1.1; display:block; letter-spacing:1px;">Dr. Iuri Sena</span>
-    <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; color:#FF5C61; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px;">Cirurgião Geral</span>
+<div id="iuri-header-logo" style="text-decoration:none; display:flex; align-items:center; padding:4px 0;">
+    <img src="assets/images/logo_iuri.png" alt="Dr. Iuri Sena" style="width:280px; height:auto; display:block; object-fit:contain;">
 </div> </a>
 </div>
 <div class="elementor-element elementor-element-02f5daa elementor-nav-menu--stretch elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-e-type="widget" data-element_type="widget" data-id="02f5daa" data-settings='{"full_width":"stretch","layout":"horizontal","submenu_icon":{"value":"&lt;svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-caret-down\" viewBox=\"0 0 320 512\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"&gt;&lt;path d=\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\"&gt;&lt;\/path&gt;&lt;\/svg&gt;","library":"fa-solid"},"toggle":"burger"}' data-widget_type="nav-menu.default">
@@ -799,8 +799,9 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="elementor-element elementor-element-38b8188 elementor-widget__width-initial elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="38b8188" data-widget_type="image.default">
 <div class="elementor-widget-container">
 <div style="text-decoration:none; display:block; padding:10px 0;">
-    <span style="font-family:'Raleway',sans-serif; font-size:24px; font-weight:700; color:#FFFFFF; display:block; letter-spacing:1px;">Dr. Iuri Sena</span>
-    <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; color:#FF5C61; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:2px;">Cirurgião Geral</span>
+    <div style="background:#FFFFFF; border-radius:12px; padding:6px 10px; display:inline-block;">
+        <img src="assets/images/logo_iuri.png" alt="Dr. Iuri Sena - Cirurgião Geral" style="height:44px; width:auto; display:block; object-fit:contain;">
+    </div>
 </div>
 </div>
 </div>
