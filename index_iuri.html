@@ -2009,9 +2009,25 @@
             var heroCta = document.querySelector('[data-id="604eb669"]');
             if (!label || !waBtn || !heroCta) return;
 
+            var isMobile = window.innerWidth <= 767;
+
+            // Align label vertically centered with the WA button (mobile only)
+            function syncLabelToButton() {
+              if (!isMobile) return;
+              requestAnimationFrame(function () {
+                var btnRect = waBtn.getBoundingClientRect();
+                var labelH = label.offsetHeight;
+                // Center of button from bottom of viewport
+                var btnCenterFromBottom = window.innerHeight - (btnRect.top + btnRect.height / 2);
+                var targetBottom = btnCenterFromBottom - labelH / 2;
+                label.style.bottom = Math.max(6, targetBottom) + 'px';
+              });
+            }
+
             function show() {
               label.classList.add('visible');
               waBtn.classList.add('wa-btn-visible');
+              syncLabelToButton();
             }
             function hide() {
               label.classList.remove('visible');
@@ -2030,41 +2046,39 @@
 
             observer.observe(heroCta);
 
-            // --- Mobile only: prevent overlap with copyright ---
-            if (window.innerWidth <= 767) {
+            // --- Mobile only: push LABEL up when near copyright (button stays) ---
+            if (isMobile) {
               var copyright = document.querySelector('.elementor-element-2cf1c4e0');
               if (copyright) {
                 var ticking = false;
-                var MOBILE_DEFAULT_BOTTOM = 14; // matches CSS bottom: 14px
-                var GAP = 12; // px gap above copyright
+                var GAP = 12; // px gap above copyright text
 
-                function adjustMobileBottom() {
+                function adjustMobileLabel() {
                   var rect = copyright.getBoundingClientRect();
                   var vh = window.innerHeight;
-                  var newBottom;
 
                   if (rect.top < vh) {
-                    // Copyright is entering the viewport — push floating elements up
-                    newBottom = (vh - rect.top) + GAP;
+                    // Copyright visible -- push label AND button up together
+                    var newBottom = (vh - rect.top) + GAP;
+                    label.style.bottom = newBottom + 'px';
+                    waBtn.style.setProperty('bottom', newBottom + 'px', 'important');
                   } else {
-                    newBottom = MOBILE_DEFAULT_BOTTOM;
+                    // Back to normal -- re-align label with button center, reset button
+                    waBtn.style.removeProperty('bottom');
+                    syncLabelToButton();
                   }
-
-                  label.style.bottom = newBottom + 'px';
-                  // Override Elementor's bottom:0px on the button
-                  waBtn.style.setProperty('bottom', newBottom + 'px', 'important');
                   ticking = false;
                 }
 
                 window.addEventListener('scroll', function () {
                   if (!ticking) {
-                    requestAnimationFrame(adjustMobileBottom);
+                    requestAnimationFrame(adjustMobileLabel);
                     ticking = true;
                   }
                 }, { passive: true });
 
-                // Run once on load in case page starts scrolled
-                adjustMobileBottom();
+                // Initial check
+                adjustMobileLabel();
               }
             }
           })();
