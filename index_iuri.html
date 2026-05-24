@@ -2029,6 +2029,44 @@
             }, { threshold: 0.1 });
 
             observer.observe(heroCta);
+
+            // --- Mobile only: prevent overlap with copyright ---
+            if (window.innerWidth <= 767) {
+              var copyright = document.querySelector('.elementor-element-2cf1c4e0');
+              if (copyright) {
+                var ticking = false;
+                var MOBILE_DEFAULT_BOTTOM = 14; // matches CSS bottom: 14px
+                var GAP = 12; // px gap above copyright
+
+                function adjustMobileBottom() {
+                  var rect = copyright.getBoundingClientRect();
+                  var vh = window.innerHeight;
+                  var newBottom;
+
+                  if (rect.top < vh) {
+                    // Copyright is entering the viewport — push floating elements up
+                    newBottom = (vh - rect.top) + GAP;
+                  } else {
+                    newBottom = MOBILE_DEFAULT_BOTTOM;
+                  }
+
+                  label.style.bottom = newBottom + 'px';
+                  // Override Elementor's bottom:0px on the button
+                  waBtn.style.setProperty('bottom', newBottom + 'px', 'important');
+                  ticking = false;
+                }
+
+                window.addEventListener('scroll', function () {
+                  if (!ticking) {
+                    requestAnimationFrame(adjustMobileBottom);
+                    ticking = true;
+                  }
+                }, { passive: true });
+
+                // Run once on load in case page starts scrolled
+                adjustMobileBottom();
+              }
+            }
           })();
         </script>
 
